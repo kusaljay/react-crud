@@ -30,13 +30,13 @@ class App extends Component {
   render() {
     const { persons } = this.state
     return (
-      <>
+      <div className="container">
         <Form
           handleSubmit={this.handleSubmit} />
         <Table 
           personsData={persons} 
           removePerson={this.removePerson} />
-      </>
+      </div>
     )
   }
 }
