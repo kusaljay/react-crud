@@ -1,26 +1,21 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
-  constructor(props) {
-    super(props)
-    this.initialState = {
-      name: '',
-      job: ''
-    }
-
-    this.state = this.initialState
-    this.handleChange = this.handleChange.bind(this)
-    this.submitForm = this.submitForm.bind(this)
+  initialState = {
+    name: '',
+    job: ''
   }
 
-  handleChange(e) {
+  state = this.initialState
+
+  handleChange = (e) => {
     const { name, value } = e.target
     this.setState({
       [name]: value
     })
   }
   
-  submitForm(e) {
+  submitForm = (e) => {
     e.preventDefault()
     this.props.handleSubmit(this.state)
     this.setState(this.initialState)

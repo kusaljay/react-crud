@@ -4,24 +4,19 @@ import Form from './components/Form'
 import './styles/main.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      persons: []
-    }
-    this.removePerson = this.removePerson.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+  state = {
+    persons: []
   }
 
-  removePerson(index) {
+  removePerson = (index) => {
     this.setState({
       persons: this.state.persons.filter((person, i) => {
         return i !== index
-      }),
+      })
     })
   }
 
-  handleSubmit(person) {
+  handleSubmit = (person) => {
     this.setState({
       persons: [...this.state.persons, person]
     })
