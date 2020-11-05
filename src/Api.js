@@ -14,9 +14,10 @@ class Api extends Component {
       })
       .then((result) => {
         this.setState({
-          data: result.map((obj) => {
-            return Object.values(obj)
-          })
+          // data: result.map((obj) => {
+          //   return Object.values(obj)
+          // })
+          data: result.map(({ userId, id, title, body }) => ([userId, id, title, body]))
         })
       })
       .catch((err) => {
