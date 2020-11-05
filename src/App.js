@@ -31,11 +31,20 @@ class App extends Component {
     const { persons } = this.state
     return (
       <div className="container">
-        <Form
-          handleSubmit={this.handleSubmit} />
-        <Table 
-          personsData={persons} 
-          removePerson={this.removePerson} />
+        <h1>CRUD app with class components</h1>
+        <div className="flex-row">
+          <div className="flex-large">
+            <h2>Add user</h2>
+            <Form
+              handleSubmit={this.handleSubmit} />
+          </div>
+          <div className="flex-large">
+            <h2>Users</h2>
+            <Table 
+              personsData={persons} 
+              removePerson={this.removePerson} />
+          </div>
+        </div>
       </div>
     )
   }
